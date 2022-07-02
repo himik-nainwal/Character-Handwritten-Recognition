@@ -59,13 +59,14 @@ st.subheader('')
 #--> User Input
 st.subheader('Upload The Image Of Alphabet-: ')
 uploaded_file = st.file_uploader("Choose a file")
+img_array=[]
 if uploaded_file is not None:
      #st.write(uploaded_file)
-     with open(os.path.join("/data/test", uploaded_file.name), "wb") as f:
+     with open(os.path.join("./data/test", uploaded_file.name), "wb") as f:
          f.write(uploaded_file.getbuffer())
      image = Image.open(uploaded_file)
      st.image(image, caption='Input Image')
-     img_path = os.path.join("/data/test", uploaded_file.name)
+     img_path = os.path.join("./data/test", uploaded_file.name)
      img_array =cv2.imread(img_path)
 
 
