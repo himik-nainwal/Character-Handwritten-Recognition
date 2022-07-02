@@ -51,7 +51,7 @@ with st.expander("See explanation"):
         * 80% Data is used for Training and 20 % Data is used of Testing purpose
      """)
 #loading the saved model
-model = load_model("/Users/rahul/PycharmProjects/texttoimage/data/text_model.h5")
+model = load_model("/data/text_model.h5")
 
 st.subheader('')
 st.subheader('')
@@ -61,11 +61,11 @@ st.subheader('Upload The Image Of Alphabet-: ')
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
      #st.write(uploaded_file)
-     with open(os.path.join("/Users/rahul/PycharmProjects/texttoimage/data/test", uploaded_file.name), "wb") as f:
+     with open(os.path.join("/data/test", uploaded_file.name), "wb") as f:
          f.write(uploaded_file.getbuffer())
      image = Image.open(uploaded_file)
      st.image(image, caption='Input Image')
-     img_path = os.path.join("/Users/rahul/PycharmProjects/texttoimage/data/test", uploaded_file.name)
+     img_path = os.path.join("/data/test", uploaded_file.name)
      img_array =cv2.imread(img_path)
 
 
