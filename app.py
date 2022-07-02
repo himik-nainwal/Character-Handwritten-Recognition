@@ -19,10 +19,7 @@ label_letter_map = {}
 for idx, letter in enumerate(upper_case):
   label_letter_map[idx] = letter
 
-#--> for Logo and Title
-col1, mid, col2 = st.columns([1,15,25])
-with col1:
-    st.title('Handwritten Character Recognition using Deep Learning')
+st.title('Handwritten Character Recognition using Deep Learning')
 
 #--> creating a block which can expand to give more info
 with st.expander("Project Description"):
