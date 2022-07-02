@@ -22,17 +22,14 @@ for idx, letter in enumerate(upper_case):
 #--> for Logo and Title
 col1, mid, col2 = st.columns([1,15,25])
 with col1:
-    st.image('data/logo.jpeg', width=150)
-with col2:
-    st.title('Handwritten Character Recognition')
+    st.title('Handwritten Character Recognition using Deep Learning')
 
 #--> creating a block which can expand to give more info
-with st.expander("About The Project"):
+with st.expander("Project Description"):
      st.write("""
-         This Project (web app) is designed to recognize the alphabets from images of handwritten alphabets.
+         This WebApp accommodates the interface which will accept a handwritten alphabet image and it will try to predict the correct output.
          Algorithm Used - CNN
-         * This Project is Scalable ( as generated model can be reused )
-         * Modular in approach
+         * Scalable project
          * Code is Easy to read and Understand
      """)
 
@@ -44,7 +41,7 @@ st.subheader('Dataset-: ')
 #--> including explation of the dataset using expander
 with st.expander("See explanation"):
      st.write("""
-         The dataset used for this project is A-Z Handwritten Dataset from NIST taken from kaggle.
+         The dataset used for this project is A-Z Handwritten Dataset from MNIST taken from kaggle.
          * It Has-
             - 372450 Rows
             - 785 Columns 
@@ -57,7 +54,7 @@ st.subheader('')
 st.subheader('')
 
 #--> User Input
-st.subheader('Upload The Image Of Alphabet-: ')
+st.subheader('Upload the image-: ')
 uploaded_file = st.file_uploader("Choose a file")
 img_array=[]
 if uploaded_file is not None:
@@ -86,10 +83,5 @@ gray = np.reshape(gray, (28, 28))
 #--> Displayong Result
 pred = alpha_dict[np.argmax(model.predict(np.reshape(gray, (1, 28, 28, 1))))]
 st.subheader('')
-st.text('Recognised As - > ')
+st.text('Predicted as  - > ')
 st.write(pred)
-
-
-
-
-
