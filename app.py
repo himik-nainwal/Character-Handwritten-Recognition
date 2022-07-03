@@ -22,14 +22,6 @@ for idx, letter in enumerate(upper_case):
 st.title('Handwritten Character Recognition using Deep Learning')
 
 #--> creating a block which can expand to give more info
-with st.expander("Project Description"):
-     st.write("""
-         This WebApp accommodates the interface which will accept a handwritten alphabet image and it will try to predict the correct output.
-         Algorithm Used - CNN
-         * Scalable project
-         * Code is Easy to read and Understand
-     """)
-
 #--> for proper spacing between elements
 st.subheader('')
 st.subheader('')
