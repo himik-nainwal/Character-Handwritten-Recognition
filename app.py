@@ -33,7 +33,7 @@ st.subheader('')
 st.subheader('')
 
 #--> User Input
-st.subheader('Upload the image-: ')
+st.subheader('Upload your image here || ')
 uploaded_file = st.file_uploader("Choose a file")
 img_array=[]
 if uploaded_file is not None:
