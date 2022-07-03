@@ -34,16 +34,6 @@ with st.expander("Project Description"):
 st.subheader('')
 st.subheader('')
 
-st.subheader('Dataset-: ')
-#--> including explation of the dataset using expander
-with st.expander("See explanation"):
-     st.write("""
-         The dataset used for this project is A-Z Handwritten Dataset from MNIST taken from kaggle.
-         * It Has-
-            - 372450 Rows
-            - 785 Columns 
-        * 80% Data is used for Training and 20 % Data is used of Testing purpose
-     """)
 #loading the saved model
 model = load_model("./data/text_model.h5")
 
